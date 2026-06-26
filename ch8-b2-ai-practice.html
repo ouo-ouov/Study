@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>시맨틱 블로그 레이아웃</title>
+    <style>
+        :root {
+            --bg: #0b0b10;
+            --card: rgba(255, 255, 255, 0.92);
+            --text: #111827;
+            --muted: #6b7280;
+            --border: rgba(17, 24, 39, 0.10);
+            --ig1: #833ab4;
+            --ig2: #fd1d1d;
+            --ig3: #fcb045;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+            background:
+                radial-gradient(900px 520px at 10% 10%, rgba(131, 58, 180, 0.40), transparent 60%),
+                radial-gradient(800px 520px at 90% 15%, rgba(253, 29, 29, 0.30), transparent 60%),
+                radial-gradient(900px 520px at 55% 95%, rgba(252, 176, 69, 0.25), transparent 55%),
+                var(--bg);
+            color: #fff;
+            padding: 2rem 1rem;
+        }
+
+        .layout {
+            width: min(1040px, 100%);
+            margin: 0 auto;
+            display: grid;
+            gap: 1rem;
+        }
+
+        header,
+        nav,
+        main,
+        footer {
+            background: var(--card);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 18px 50px rgba(0, 0, 0, 0.25);
+            position: relative;
+        }
+
+        .sem-label {
+            position: absolute;
+            top: 10px;
+            left: 12px;
+            font-size: 0.75rem;
+            font-weight: 900;
+            letter-spacing: 0.12em;
+            padding: 0.25rem 0.55rem;
+            border-radius: 999px;
+            color: #111827;
+            background: linear-gradient(135deg, rgba(131, 58, 180, 0.18), rgba(253, 29, 29, 0.14), rgba(252, 176, 69, 0.16));
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            user-select: none;
+        }
+
+        header { padding-top: 2.2rem; }
+        nav { padding-top: 2.2rem; }
+        main { padding-top: 2.2rem; }
+        footer { padding-top: 2.2rem; }
+
+        header {
+            padding: 1.4rem 1.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo {
+            width: 42px;
+            height: 42px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--ig1), var(--ig2), var(--ig3));
+            box-shadow: 0 12px 30px rgba(253, 29, 29, 0.25);
+        }
+
+        header h1 {
+            font-size: 1.3rem;
+            letter-spacing: -0.02em;
+        }
+
+        header p {
+            color: var(--muted);
+            font-size: 0.95rem;
+            margin-top: 0.15rem;
+        }
+
+        .search {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .search input {
+            width: min(320px, 45vw);
+            padding: 0.75rem 0.9rem;
+            border-radius: 999px;
+            border: 1px solid rgba(17, 24, 39, 0.12);
+            outline: none;
+        }
+
+        .search input:focus {
+            border-color: rgba(131, 58, 180, 0.55);
+            box-shadow: 0 0 0 4px rgba(131, 58, 180, 0.15);
+        }
+
+        .pill {
+            padding: 0.75rem 1rem;
+            border-radius: 999px;
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            background: linear-gradient(135deg, rgba(131, 58, 180, 0.12), rgba(253, 29, 29, 0.10), rgba(252, 176, 69, 0.10));
+            font-weight: 700;
+        }
+
+        nav {
+            padding: 0.9rem 1rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.65rem;
+        }
+
+        nav a {
+            display: inline-block;
+            text-decoration: none;
+            color: #111827;
+            padding: 0.55rem 0.85rem;
+            border-radius: 999px;
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            background: rgba(255, 255, 255, 0.75);
+        }
+
+        nav a:hover {
+            background: linear-gradient(135deg, rgba(131, 58, 180, 0.12), rgba(253, 29, 29, 0.10), rgba(252, 176, 69, 0.10));
+            border-color: rgba(131, 58, 180, 0.22);
+        }
+
+        main {
+            padding: 1.2rem 1.1rem;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1.6fr 0.9fr;
+            gap: 1rem;
+        }
+
+        @media (max-width: 900px) {
+            header { flex-direction: column; align-items: stretch; }
+            .search { justify-content: space-between; }
+            .content { grid-template-columns: 1fr; }
+        }
+
+        .posts,
+        .sidebar {
+            display: grid;
+            gap: 1rem;
+        }
+
+        article,
+        aside section {
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 16px;
+            padding: 1rem 1rem;
+            background: rgba(255, 255, 255, 0.80);
+            position: relative;
+        }
+
+        article { padding-top: 2.2rem; }
+
+        .tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.25rem 0.6rem;
+            border-radius: 999px;
+            color: #111827;
+            background: linear-gradient(135deg, rgba(131, 58, 180, 0.18), rgba(253, 29, 29, 0.14), rgba(252, 176, 69, 0.16));
+            border: 1px solid rgba(131, 58, 180, 0.18);
+        }
+
+        article h2 {
+            margin-top: 0.55rem;
+            font-size: 1.1rem;
+            letter-spacing: -0.02em;
+        }
+
+        article p {
+            margin-top: 0.5rem;
+            color: #4b5563;
+            line-height: 1.7;
+        }
+
+        .meta {
+            margin-top: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            gap: 0.75rem;
+            color: #6b7280;
+            font-size: 0.9rem;
+            padding-top: 0.8rem;
+            border-top: 1px dashed rgba(17, 24, 39, 0.14);
+        }
+
+        aside h3 {
+            font-size: 1rem;
+            margin-bottom: 0.6rem;
+        }
+
+        aside ul {
+            list-style: none;
+            display: grid;
+            gap: 0.55rem;
+        }
+
+        aside li {
+            color: #374151;
+            line-height: 1.6;
+        }
+
+        footer {
+            padding: 1.1rem 1.25rem;
+            text-align: center;
+            color: #4b5563;
+        }
+
+        footer b {
+            background: linear-gradient(90deg, var(--ig1), var(--ig2), var(--ig3));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <header>
+            <div class="sem-label">HEADER</div>
+            <div class="brand">
+                <div class="logo" aria-hidden="true"></div>
+                <div>
+                    <h1>Heejung Blog</h1>
+                    <p>시맨틱 태그로 만든 블로그 레이아웃</p>
+                </div>
+            </div>
+
+            <div class="search">
+                <input type="search" placeholder="검색어를 입력해요" />
+                <div class="pill">IG vibe</div>
+            </div>
+        </header>
+
+        <nav aria-label="블로그 메뉴">
+            <div class="sem-label">NAV</div>
+            <ul>
+                <li><a href="#">홈</a></li>
+                <li><a href="#">프로필</a></li>
+                <li><a href="#">글 목록</a></li>
+                <li><a href="#">카테고리</a></li>
+                <li><a href="#">문의</a></li>
+            </ul>
+        </nav>
+
+        <main>
+            <div class="sem-label">MAIN</div>
+            <div class="content">
+                <section class="posts" aria-label="게시글 목록">
+                    <article>
+                        <div class="sem-label">ARTICLE</div>
+                        <span class="tag">HTML</span>
+                        <h2>시맨틱 태그가 좋은 이유</h2>
+                        <p>문서 구조를 더 명확하게 만들고, 검색엔진/접근성에도 도움이 돼요. 오늘은 <b>header/nav/main/footer</b>로 블로그 틀을 잡아봤어요.</p>
+                        <div class="meta">
+                            <span>2026-05-28</span>
+                            <span>읽는 시간 2분</span>
+                        </div>
+                    </article>
+
+                    <article>
+                        <div class="sem-label">ARTICLE</div>
+                        <span class="tag">CSS</span>
+                        <h2>인스타그램 느낌 색감 만들기</h2>
+                        <p>보라→핑크→오렌지 그라데이션을 배경과 포인트에 섞으면 분위기가 확 살아나요. 너무 쨍하면 카드(흰 배경)로 톤을 잡아주면 편안해져요.</p>
+                        <div class="meta">
+                            <span>2026-05-28</span>
+                            <span>읽는 시간 3분</span>
+                        </div>
+                    </article>
+                </section>
+
+                <aside class="sidebar" aria-label="사이드바">
+                    <section>
+                        <h3>소개</h3>
+                        <ul>
+                            <li>초보자도 보기 쉽게 만든 예제예요.</li>
+                            <li>레이아웃은 <b>시맨틱 태그</b>로 구성했어요.</li>
+                            <li>색감은 인스타그램 스타일 그라데이션!</li>
+                        </ul>
+                    </section>
+
+                    <section>
+                        <h3>바로가기</h3>
+                        <ul>
+                            <li># HTML</li>
+                            <li># CSS</li>
+                            <li># Layout</li>
+                        </ul>
+                    </section>
+                </aside>
+            </div>
+        </main>
+
+        <footer>
+            <div class="sem-label">FOOTER</div>
+            © 2026 <b>Heejung Blog</b> · header/nav/main/footer 연습용
+        </footer>
+    </div>
+</body>
+</html>

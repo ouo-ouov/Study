@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <style>
+        :root {
+            --bg1: #f0fdf4;
+            --bg2: #dcfce7;
+            --card: rgba(255, 255, 255, 0.92);
+            --text: #064e3b;
+            --muted: #52796f;
+            --border: rgba(6, 95, 70, 0.14);
+            --focus: rgba(34, 197, 94, 0.25);
+            --primary: #16a34a;
+            --primaryHover: #15803d;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 2rem 1rem;
+            font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+            background: linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 55%, var(--bg1) 100%);
+            color: var(--text);
+        }
+
+        .card {
+            width: min(560px, 100%);
+            padding: 2.2rem 1.85rem;
+            border-radius: 18px;
+            background: var(--card);
+            border: 1px solid var(--border);
+            box-shadow: 0 18px 50px rgba(6, 95, 70, 0.12);
+        }
+
+        h1 {
+            font-size: 1.6rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.4rem;
+        }
+
+        .sub {
+            color: var(--muted);
+            line-height: 1.7;
+            margin-bottom: 1.6rem;
+        }
+
+        form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .field {
+            display: grid;
+            gap: 0.45rem;
+        }
+
+        label {
+            font-size: 0.95rem;
+            color: #0f766e;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 0.85rem 0.95rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            background: #ffffff;
+            color: #052e2a;
+            outline: none;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        input::placeholder,
+        textarea::placeholder {
+            color: #94a3b8;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: rgba(34, 197, 94, 0.6);
+            box-shadow: 0 0 0 4px var(--focus);
+        }
+
+        .actions {
+            margin-top: 0.25rem;
+            display: grid;
+            gap: 0.75rem;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.95rem 1rem;
+            border-radius: 12px;
+            border: 1px solid rgba(6, 95, 70, 0.18);
+            background: var(--primary);
+            color: #ffffff;
+            font-weight: 800;
+            cursor: pointer;
+            transition: background 0.15s ease;
+        }
+
+        button:hover {
+            background: var(--primaryHover);
+        }
+
+        .hint {
+            margin-top: 1rem;
+            color: var(--muted);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        code {
+            padding: 2px 6px;
+            border-radius: 8px;
+            background: rgba(34, 197, 94, 0.10);
+            border: 1px solid rgba(34, 197, 94, 0.18);
+        }
+    </style>
+</head>
+<body>
+    <main class="card">
+        <h1>회원가입</h1>
+        <p class="sub">초보자용 예제 폼이에요. 필수 입력을 채우고 <code>가입하기</code>를 눌러보세요.</p>
+
+        <form action="#" method="post">
+            <div class="field">
+                <label for="name">이름</label>
+                <input id="name" name="name" type="text" placeholder="예: 서희정" required />
+            </div>
+
+            <div class="field">
+                <label for="email">이메일</label>
+                <input id="email" name="email" type="email" placeholder="예: heejung@example.com" required />
+            </div>
+
+            <div class="field">
+                <label for="job">직업</label>
+                <select id="job" name="job" required>
+                    <option value="" selected disabled>직업을 선택해 주세요</option>
+                    <option value="student">학생</option>
+                    <option value="developer">개발자</option>
+                    <option value="designer">디자이너</option>
+                    <option value="office">직장인</option>
+                    <option value="etc">기타</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="bio">자기소개</label>
+                <textarea id="bio" name="bio" placeholder="간단히 자기소개를 작성해 주세요." required></textarea>
+            </div>
+
+            <div class="actions">
+                <button type="submit">가입하기</button>
+            </div>
+        </form>
+
+        <p class="hint">팁: <code>email</code> 타입은 이메일 형식이 아니면 제출이 막혀요.</p>
+    </main>
+</body>
+</html>

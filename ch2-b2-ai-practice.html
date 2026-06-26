@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>자기소개 문단 | 서희정</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+            background: linear-gradient(160deg, #fffde7 0%, #fff176 30%, #ffee58 55%, #ffeb3b 100%);
+            color: #3e2723;
+        }
+
+        .intro-card {
+            width: min(520px, 100%);
+            padding: 2.5rem 2rem;
+            background: rgba(255, 255, 255, 0.92);
+            border: 3px solid #ffeb3b;
+            border-radius: 24px;
+            box-shadow:
+                0 20px 40px rgba(255, 235, 59, 0.45),
+                0 0 0 6px rgba(238, 21, 21, 0.12);
+        }
+
+        .intro-card h1 {
+            margin-bottom: 1.75rem;
+            font-size: 1.75rem;
+            text-align: center;
+            color: #2c2416;
+            text-shadow: 0 2px 0 #fff9c4;
+        }
+
+        .intro-card h1::before {
+            content: "⚡ ";
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.85;
+            color: #4e342e;
+            padding: 0.5rem 0.25rem;
+        }
+
+        hr {
+            margin: 1.25rem 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                #ffeb3b 20%,
+                #ee1515 50%,
+                #ffeb3b 80%,
+                transparent
+            );
+        }
+
+        p:last-of-type {
+            margin-top: 0.25rem;
+            padding: 1rem 1.1rem;
+            border-radius: 12px;
+            background: #fffde7;
+            border: 2px solid #fff176;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <main class="intro-card">
+        <h1>서희정의 자기소개</h1>
+
+        <p>안녕하세요! 저는 서희정입니다. 웹 개발을 이제 막 배우기 시작한 초보 개발자예요.</p>
+
+        <hr>
+
+        <p>매일 조금씩 HTML과 CSS를 연습하면서, 나중에는 멋진 웹사이트를 직접 만들고 싶어요. 꾸준히 배우는 것을 좋아합니다.</p>
+
+        <hr>
+
+        <p>
+            취미는 게임, 산책, 코딩이고 좋아하는 음식은 떡볶이예요.<br />
+            앞으로도 열심히 공부할게요. 잘 부탁드립니다!
+        </p>
+    </main>
+</body>
+</html>

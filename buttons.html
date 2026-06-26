@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실습25</title>
+  <style>
+    body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; padding: 30px; }
+    h1 { color: #1d4ed8; }
+    .box { border: 2px solid #dbeafe; background: #eff6ff; padding: 16px; border-radius: 10px; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; max-width: 720px; }
+    th, td { border: 1px solid #94a3b8; padding: 10px; text-align: center; }
+    form { max-width: 520px; padding: 18px; border: 1px solid #cbd5e1; border-radius: 10px; }
+    label { display: block; margin-top: 12px; font-weight: 700; }
+    input, select, textarea, button { font-size: 16px; padding: 9px; margin-top: 6px; }
+    .card { border: 1px solid #cbd5e1; border-radius: 10px; padding: 14px; margin: 10px 0; }
+    .highlight { background: #fef3c7; color: #b45309; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <!-- [실습25] 실습A · buttons.html — 버튼 3종 직접 만들기 -->
+  <h1>buttons.html — 버튼 3종 직접 만들기</h1>
+
+  <!-- form은 사용자가 입력하는 영역 전체를 묶는 태그입니다. -->
+  <form>
+    <!-- label은 입력칸 앞의 이름표입니다. for 값과 input의 id 값을 같게 연결합니다. -->
+    <label for="user-id">아이디</label>
+    <input type="text" id="user-id" placeholder="아이디를 입력하세요">
+
+    <label for="user-pw">비밀번호</label>
+    <input type="password" id="user-pw" placeholder="비밀번호를 입력하세요">
+
+    <label for="email">이메일</label>
+    <input type="email" id="email" placeholder="abc@example.com">
+
+    <!-- button은 사용자가 클릭하는 버튼입니다. -->
+    <button type="submit">제출하기</button>
+    <input type="submit" value="로그인">
+
+    <button type="reset">다시모두작성</button>
+    <input type="reset" value="다시모두작성">
+
+    <button type="button">일반</button>
+    <input type="button" value="일반">
+
+  </form>
+
+
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강아지 사진 갤러리</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", sans-serif;
+            background: linear-gradient(180deg, #e3f2fd 0%, #b3e5fc 50%, #81d4fa 100%);
+            color: #1565c0;
+        }
+
+        .gallery {
+            width: min(720px, 100%);
+            padding: 2.5rem 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            border: 2px solid #90caf9;
+            box-shadow: 0 16px 40px rgba(33, 150, 243, 0.2);
+        }
+
+        h1 {
+            margin-bottom: 0.5rem;
+            font-size: 1.6rem;
+        }
+
+        .tip {
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #546e7a;
+        }
+
+        .photo-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        img {
+            display: block;
+            border-radius: 12px;
+            border: 3px solid #90caf9;
+            box-shadow: 0 8px 20px rgba(33, 150, 243, 0.2);
+        }
+
+        figcaption {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            color: #1976d2;
+        }
+    </style>
+</head>
+<body>
+    <main class="gallery">
+        <h1>파밀리쥐</h1>
+        
+
+        <div class="photo-list">
+            <figure>
+                <img src="images/dog1.jpg"  width="200" />
+                <figcaption>사진 1</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/dog2.jpg"  width="200" />
+                <figcaption>사진 2</figcaption>
+            </figure>
+
+            <figure>
+                <img src="images/dog3.jpg"  width="200" />
+                <figcaption>사진 3</figcaption>
+            </figure>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>실습33</title>
+  <style>
+    body { font-family: 'Malgun Gothic', sans-serif; line-height: 1.7; padding: 30px; }
+    h1 { color: #1d4ed8; }
+    .box { border: 2px solid #dbeafe; background: #eff6ff; padding: 16px; border-radius: 10px; margin: 16px 0; }
+    table { border-collapse: collapse; width: 100%; max-width: 720px; }
+    th, td { border: 1px solid #94a3b8; padding: 10px; text-align: center; }
+    form { max-width: 520px; padding: 18px; border: 1px solid #cbd5e1; border-radius: 10px; }
+    label { display: block; margin-top: 12px; font-weight: 700; }
+    input, select, textarea, button { font-size: 16px; padding: 9px; margin-top: 6px; }
+
+    /*
+        .       의미 clsss속성에 설정된 값으로 <div> 태그를 불러온다.
+        .card   의미 class속성에 card라고 설정된 <div>태그 한 쌍을 불러 온다.
+        .card { 의미 class속성에 card라고 설정된 <div>태그 한 쌍을 불러와서 스타일을 설정하겠다.
+          스타일속성명:설정값;
+          스타일속성명:설정값;
+        }   
+    */
+    .card { 
+      border: 10px solid #cbd5e1; 
+      border-radius: 10px; 
+      padding: 14px; 
+      margin: 10px 0; 
+    }
+    .highlight { background: #fef3c7; color: #b45309; font-weight: 700; }
+  </style>
+</head>
+<body>
+  <!-- [실습33] 실습A · id-test.html — id로 각 구역 색상 다르게 -->
+  <h1>id-test.html — id로 각 구역 색상 다르게</h1>
+
+  <!-- id는 한 페이지에서 하나만 쓰는 고유한 이름표입니다. -->
+  <div id="intro" class="card">
+    <!-- class는 여러 요소에 반복해서 붙일 수 있는 이름표입니다. -->
+    <p>이 문장 안의 <span class="highlight">중요한 단어</span>를 강조합니다.</p>
+  </div>
+
+  <div class="card">
+    <p>같은 class를 쓰면 여러 박스를 같은 방식으로 관리할 수 있습니다.</p>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>상품 카드 3개</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            font-family: "Pretendard", "Malgun Gothic", "Apple SD Gothic Neo", system-ui, sans-serif;
+            background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 45%, #f1f5f9 100%);
+            color: #111827;
+            display: grid;
+            place-items: center;
+        }
+
+        .wrap {
+            width: min(920px, 100%);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.7rem;
+            letter-spacing: -0.02em;
+            margin-bottom: 1.5rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+        }
+
+        @media (max-width: 860px) {
+            .grid { grid-template-columns: 1fr; }
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid rgba(17, 24, 39, 0.10);
+            border-radius: 16px;
+            padding: 1.25rem 1.15rem;
+            box-shadow: 0 14px 40px rgba(15, 23, 42, 0.10);
+        }
+
+        .card__title {
+            font-size: 1.15rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card__desc {
+            color: #6b7280;
+            line-height: 1.7;
+            margin-bottom: 0.9rem;
+        }
+
+        .card__row {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 0.75rem;
+            padding-top: 0.9rem;
+            border-top: 1px solid rgba(17, 24, 39, 0.08);
+        }
+
+        .card__label {
+            color: #374151;
+            font-weight: 600;
+        }
+
+        .price {
+            color: #ef4444;
+            font-weight: 800;
+            font-size: 1.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <h1>상품 카드 3개</h1>
+
+        <div class="grid">
+            <div class="card">
+                <h2 class="card__title">무선 마우스</h2>
+                <p class="card__desc">가볍고 조용한 클릭감. 공부/작업용으로 좋아요.</p>
+                <div class="card__row">
+                    <div class="card__label">가격</div>
+                    <div><span class="price">19,900원</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card__title">텀블러 500ml</h2>
+                <p class="card__desc">보온/보냉 OK. 데일리로 들고 다니기 딱 좋아요.</p>
+                <div class="card__row">
+                    <div class="card__label">가격</div>
+                    <div><span class="price">12,900원</span></div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2 class="card__title">노트북 파우치</h2>
+                <p class="card__desc">쿠션감 있는 보호 파우치. 충격을 줄여줘요.</p>
+                <div class="card__row">
+                    <div class="card__label">가격</div>
+                    <div><span class="price">24,800원</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
