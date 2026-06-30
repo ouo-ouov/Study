@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>text-transform</title>
+  <style> 
+
+      /* class="trans1" 라고 작성된 첫 번째 p 요소 선택 */
+
+      .trans1 {
+        text-transform: capitalize; /* 선택한 p요소 사이에 있는 텍스트의 첫 문자만 대문자로 변경 */
+      }
+
+      /* class="trans2" 라고 작성된 두 번째 p요소 선택 */
+
+      .trans2 {
+        text-transform: uppercase; /* 선택한 p요소 사이에 있는 텍스트의 모든 문자가 소문자이면 모두 대문자로 변경 */
+      }
+
+      /* class="trans3" 라고 작성된 두 번째 p요소 선택 */
+      
+      .trans3 {
+        text-transform: lowercase; /* 선택한 p요소 사이에 있는 텍스트의 모든 문자가 대문자이면 모두 소문자로 변경 
+                                      단!! 모두 소문자이면? 그대로 둡니다.                         
+                                   */
+      }
+
+
+  </style>
+</head>
+<body>
+  <p class="trans1">html</p> 
+  <p class="trans2">css</p>
+  <p class="trans3">javascriPT</p>
+</body>
+</html> 
