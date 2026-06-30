@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS display 속성</title>
+  <style>
+    * {
+        /* 모든 요소의 border-box 값으로 설정하여 
+           패딩과 테두리를 포함한 크기 계산하게 설정 */
+        box-sizing: border-box;
+    }
+
+    /* nav요소의 하위 ul요소를 최종 선택해서 가져와 스타일 정의 */
+    nav ul {
+      /* ul 요소에 작성된 모든 li의 블릿기호 제거 */
+      list-style: none;
+    }
+
+    /* nav요소의 하위 ul요소의 하위 모든 li요소들을 최종 선택해서 가져와 스타일 정의 */
+    nav ul li {
+      /* 최종 선택한 li요소들을 인라인레벨 요소로 설정하여 가로로 나열 될 수 있게 설정 */
+      display: inline-block;
+      /* 최종 선택한 li요소들의 바깥 테두리 선 표시 */
+      border: 1px solid #222;
+      /* 최종 선택한 li요소들의 내부 여백을 20px로 설정 */
+      padding: 20px;
+      /* 최종 선택한 li요소들의 좌우 외부(바깥)여백을 20px로 설정 */
+      margin: 0px 20px;
+    }
+  </style>
+</head>
+<body>
+   <nav>
+     <ul>
+      <li>menu 1</li>
+      <li>menu 2</li>
+      <li>menu 3</li>
+      <li>menu 4</li>
+     </ul>
+   </nav>
+</body>
+</html>
