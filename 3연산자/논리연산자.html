@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            논리 연산자?
+             - 피연산자를 논리적으로 평가한 뒤,
+               조건에 맞는 피연산자를 반환하는 연산을 수행하는 연산자
+             - 종류
+                    ||   &&   !
+        */
+        //and연산자 &&는 피연산자를 왼쪽부터 평가해 평가결과가 거짓이면 거짓이 나온 피연산자를 
+        //즉시 반환하고 거짓이 아니면 마지막에 평가되는 피연산자를 반환합니다.
+        document.write(true && true, "<br>");
+        //왼쪽 -----------> 
+        
+        document.write(true && true && true, "<br>");
+
+        //자바스크립트의 자료형 중 ""빈문자열, undefined, null, 만 거짓으로 평가 *********중요
+
+        console.log("" && "cat"); //"" 빈공백 문자열이 출력된다.
+
+        console.log(undefined && "cat"); //undefined 가 출력된다.
+
+        console.log(0 && "cat");
+
+        console.log(null && "cat");
+
+        //-------------------------------------------
+         /*
+            논리연산자가 반드시 ture, false를 반환하는 것이라 평가결과에 따라
+            피연산자를 반환하는 특징이 있습니다.
+         */
+        console.log("cat" && "dog"); //"dog"
+
+        /*
+         "cat"은 참으로 평가 됩니다.
+         &&연산자는 첫 번째 피연산자가 참이므로 두번째 피연산자 "dog"를 평가합니다.
+         "dog"도 참으로 평가되므로, 두번째 피연산자 "dog를 반환합니다."
+        */
+
+        // 실무 사용 예시 : 로그인 여부에 따라 메뉴 보여주기
+        const isLogin = true;
+        isLogin && document.write("<h1>메뉴</h1>"); // <- 로그인하면 메뉴 보여주기
+
+        //OR연산자는 왼쪽부터 평가해 참으로 평가된 피연산자를 즉시 반환
+        console.log(false || true || false); //ture
+
+        console.log(false || false); //false
+
+        console.log(false || "cat"); //"cat"
+
+        console.log("dog" || "cat"); //"dog"
+
+        /*
+            NOT연산자 ! 는 피연산자나 식을 평가한 논리값의 반대값 (true->false, false->true)을 반환함
+        */
+        console.log(!false); //true
+
+        console.log(!(10 < 20)); //false
+
+        console.log(!(10 < 20 && 20 < 10)); //true
+
+        console.log(!true && false); //false
+
+        console.log(!(true && false)); //true
+
+
+
+        
+        </script>
+    
+</body>
+</html>

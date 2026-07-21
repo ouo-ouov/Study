@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 예를 들어 num1변수메모리에 10이 저장되어 있다고 가정하자
+        // num1변수메모리에 저장된 10을 1차감한 9로 만들어 만든 9를 다시 num1변수에 저장시키는 식?
+        // num1 = num1 - 1;
+        // 위 식보다 더 짧게 작성할 수 있는 식?
+        // num1 -= 1;
+
+        let num1 = 10;
+        let num2 = 20;
+        let result;  //계산할 결과값 저장할 변수
+
+        //num1변수에 저장된 10을 1감소 시킨 9를 다시 num1변수에 대입해서 저장
+        num1--;  // 풀어서 작성하면? num1 = num1 - 1; 또는 num1 -= 1;
+        document.write(num1, "<br>");
+
+        //----------- num1 = 9; 현재 저장되어 있음
+
+        //num1변수에 저장된 9를 1증가 시킨 10을 다시 num1변수에 대입해서 저장
+        num1++; // 풀어서 작성하면? num1 = num1 + 1; 또는 num1 += 1;
+        document.write(num1, "<br>");
+
+
+        result = ++num2;    
+        document.write(num2, "&nbsp;&nbsp", num2);
+
+
+    </script>
+</body>
+</html>
