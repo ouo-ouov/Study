@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            문제 : 사이트 방문자에게 현재 몇 월 달인지 입력 받습니다.
+                   입력받은 월에 따라 각각 다른 문장을 출력하는 예
+        */
+        //순서1. 사이트 방문자에게 현재 몇 월 달인지 입력 받아 mon변수에 저장
+        let mon = prompt("현재 몇 월인지 입력하세요!", "0");
+        // 6을 입력 받았다고 가정
+
+        //순서2. 입력 받은 현재 몇 월 달인지의 숫자 값에 따라 각 각 다른 문장을 출력시킵니다.
+        //       if else if else 전체구문을 사용해서 작성합니다.
+
+        //사이트 이용자에게 입력 받은 현재 월이 9, 10, 11 중에 해당 하는지 조건식1을 사용해 확인합니다.
+        //요약 : 만약 9 ~ 11 사이의 값을 사용자가 입력했다면?
+        if(mon >= 9 && mon <= 11){
+
+            document.write("독서의 계절 가을이네요!!"); //클라이언트의 웹브라우저로 출력(응답)
+        
+        //사이트 이용자에게 입력 받은 현재 월이 6, 7, 8 중에 해당 하는지 조건식2를 사용해 확인합니다.
+        //요약 : 만약 6 ~ 8 사이의 값을 사용자가 입력했다면?
+        //상세풀이 : 만약 mon변수에 저장된 입력한 값이 6이상이고 8이하와 같다면?
+        //상세풀이2: 만약 mon변수에 저장된 입력한 값이 6보다 크거나 같고 그리고 8보다 작거나 같다면?
+        }else if(mon >= 6 && mon <= 8){
+
+            document.write("여행 가기 좋은 여름 이네요!!"); //클라이언트가 사용하고 있는 브라우저로 응답(출력)
+
+
+        //조건식3 -> 사용자가 입력한 월(mon변수)이 3월에서 5월 사이라면?    
+        }else if(mon >= 3 && mon <= 5){
+
+            document.write("햇살 가득한 봄 이네요!!");
+
+
+        }else {//사용자가 입력한 월이 12, 1, 2 라면?
+
+            //조건식1 조건식2 조건식3의 결과가 모두 false일 경우 실행할 실행문코드4;
+            document.write("스키의 계졀 겨울 이네요!!");
+
+
+
+        }
+
+        let message; //계절 메세지를 저장할 변수 선언
+
+        switch(ture){
+
+            case mon >= 9 && mon <= 11 : 
+                message = "독서의 계절 가을이네요!!";
+                break;
+
+            case mon >= 6 && mon <= 8 : 
+                message ="여행 가기 좋은 여름 이네요!!";
+                break;    
+
+            case mon >= 3 && mon <= 5 : 
+                message = "햇살 가득한 봄 이네요!!";
+                break;    
+
+            default :
+                message = "스키의 계졀 겨울 이네요!!";
+                break;
+        }
+
+        //massage변수에 저장된 계절 메세지 한번만 출력
+        document.write(message);
+
+
+    </script>
+    
+</body>
+</html>
