@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            즉시 실행 함수 ?
+            - 함수를 만드는(선언하는) 동시에 바로 호출해서 실행하는 함수
+
+            작성 방법
+            -
+                    (function 함수명(){ 실행코드; })함수명();    <- 한줄코드
+
+                    (function 함수명(){ 
+                    
+                        실행코드; 
+                    
+                    })함수명();
+
+                    (function(){ 실행코드; })();       <- 한줄코드
+
+                    (function(){ 
+                    
+                        실행코드; 
+                    
+                    })();
+        */
+
+        /*
+            일반적으로 함수를 선언하면 전역 스코프영역에 정의됩니다.
+            그리고 프로그램이 종료되기저까지 전역 스코프에 선언한 함수는
+            메모리에서 사라지지 않습니니다.
+            아래에 정의된 init함수가 있습니다.
+            const키워드에 저장했기 때문에 프로그램이 종료되기 전에는
+            init 상수명으로 function을 재사용할 수 있습니다.
+
+            const init = function(){
+            
+                console.log("nitialized")
+
+            })init(); <------호출
+        */
+
+        (function init(){
+
+            //실행코드;
+            console.log("initialized");
+
+        })();
+
+        //재호출 불가능 
+        init(); //ReferenceError: init is not defined
+
+    </script>
+    
+</body>
+</html>
