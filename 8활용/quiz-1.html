@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>연습문제 1</title>
+    <link rel="stylesheet" href="css/quiz-1.css" />
+  </head>
+  <body>
+    <div id="container">
+      <h1>참가자 명단</h1>
+      <form>
+        <ul id="userInput">
+          <li>
+            <label for="username">이 름</label>
+            <input type="text" id="username" />
+          </li>
+          <li>
+            <label for="major">전 공</label>
+            <input type="text" id="major" />
+          </li>
+        </ul>
+        <button>등록하기</button>
+      </form>
+
+      <table id="attendant">
+        <thead>
+          <tr>
+            <th>이 름</th>
+            <th>전 공</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <script>
+      //이름을 입력하는 <input type="text" id="username" /> 요소 선택
+      const username = document.querySelector("#username");
+
+      //전공을 입력하는 <input type="text" id="major" /> 요소 선택
+      const major = document.querySelector("#major");
+
+      //<button>등록하기</button>
+      const bttn = document.querySelector("form > button");
+
+      //<button>등록하기</button> 버튼에 클릭이벤트 생성
+      bttn.addEventListener("click", (e) => {
+
+        e.preventDefault(); //<form>의 submit 전송 이벤트 차단
+
+        let tbody = document.querySelector("#attendant > tbody");  //<tbody></tbody>
+
+    
+        let newTr = document.createElement("tr"); // 새로운 <tr></tr> 요소 생성
+
+        let nameTd = document.createElement("td"); // 새로운 <td></td> 요소 생성
+
+            nameTd.innerText = username.value; //<td>김길동</td>
+  
+
+        username.value = ""; //<input type="text" id="username" /> 빈 문자열 생성
+
+
+        let majorTd = document.createElement("td"); //<td></td>
+            majorTd.innerText = major.value;        //<td>컴공</td>
+         
+
+        major.value = ""; //<input type="text" id="major" /> "" 빈 문자열 생성
+
+
+        newTr.appendChild(nameTd); //<tr><td>김길동</td></tr>
+
+
+        newTr.appendChild(majorTd); //<tr><td>컴공</td></tr>
+
+
+
+        tbody.appendChild(newTr); 
+
+        /*
+        <tbody>
+        <tr>
+          <td>김길동</td>
+          <td>컴공</td>
+        </td>  
+        </tbody>
+        */
+
+      });
+    </script>
+  </body>
+</html>
