@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+ <!--
+      $.get() 메소드
+      - 다른 외부 서버페이지로부터 데이터를 비동기적으로 가져오는데 사용되는 메소드
+      - 주로 REST API와의 통신에 사용되며, GET 요청을 통해 데이터를 요청할떄 쓰임
+      - 문법
+           $.get(요청할_서버페이지_URL, 
+           		 서버페이지로 요청전송할 데이터(객체형식) - 선택사항,
+                               요청이 성공했을때 호출될 콜백함수 function);
+  -->
+</head>
+<body>
+	<button id="fetch-data">다른 서버페이지에서 JSON데이터 요청해서 가져오기</button>
+	<div id="result"></div>
+	
+	<script type="text/javascript">
+	
+		//1. 위 <button> 요소를 선택해서 "CLICK" 이벤트를 등록하여
+		//   사이트 이용자가 <button> 요소를 클릭하면 "CLICK" 이벤트를 처리하는 구문 작성
+		$("#fetch-data").click(function(){
+			
+			//2. 외부 회사에서 미리 만들어 놓고 제공하는 서버페이지를 $.get() 메소드를 이용하여 요청하여
+			//   서버페이지에서 제공하는 .json 파일의 데이터를 얻자
+			$.get("https://jsonplaceholder.typicode.com/posts/1", function(data){
+									                                     //요청에 따른 응답 데이터 전달 받음
+									                                     
+				//3. <div id="result"></div> 요소를 선택해서 가져와 내부에 응답받은 {} 객체 정보를 넣자
+				$("#result").append("<h2>" + data.userId + "</h2><p>" + data.body + "</p>");
+									                                     
+				//console.log(data);
+			});
+			
+		});
+	
+	</script>
+	
+</body>                             
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
