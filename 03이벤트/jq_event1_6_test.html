@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 </title>  
+	<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+	<script>
+	$(function( ) {
+		/*
+			mouseover()
+			- 선택한요소에 마우스포인터가 위로 올라가는 동작(이벤트)을 등록하는 메소드.
+			  선택한 요소의 상위요소들에서도 등록한 이벤트가 버블링되어 상위요소도 함께 mouseover이벤트가 등록된다.
+			- 문법1.
+				$("이벤트대상요소선택").mouseover(function(){ 이벤트처리코드;  });
+
+			  문법2.
+			    $("이벤트대상요소선택").on("mouseover", function(){ 이벤트처리코드; });
+			    
+			- mouseover이벤트를 선택한 이벤트대상요소에 강제로 발생시키기 위한 문법
+				$("이벤트대상요소선택").mouseover();
+			   
+					
+			mouseout()
+			- 선택한요소 위에 마우스포인터가 벗어나는 동작(이벤트)을 등록하는 메소드.
+			    선택한 요소에 mouseout이벤트를 등록해 놓으면  
+			    감싸고 있는 상위요소에도 버블링되어 함께 mouseout이벤트가 등록된다.
+			- 문법1.
+				$("이벤트대상요소선택").mouseout(function(){ 이벤트처리코드;  });
+		      문법2.
+			    $("이벤트대상요소선택").on("mouseout", function(){ 이벤트처리코드; });
+			    
+			- mouseout이벤트를 선택한 이벤트대상요소에 강제로 발생시키기 위한 문법
+				$("이벤트대상요소선택").mouseout();
+			
+			
+			hover()
+			- 선택한 요소위에 마우스포인터가 올라가 있을때의 동작(이벤트)와  
+			  벗어나는 동작(이벤트)을 두개 동시에 등록하는 메소드.
+			  각각 다른 이벤트핸들러 function으로 이벤트를 처리할수 있다.
+			- 문법
+				$("이벤트대상요소선택").hover(function(){mouseover이벤트발생시 처리할 코드;},
+	 									  function(){mouseout이벤트발생시 처리할 코드;});
+		*/
+		
+		//주제1. 부모 body 요소에 mouseover 와 mouseout 이벤트 각각 등록 후 이벤트 처리
+		
+		$("body").on("mouseover", function(){
+			
+			console.log("부모 body 요소에서 mouseover 이벤트가 발생되어 처리됨");
+		});
+		
+		$("body").on("mouseout", function(){
+			
+			console.log("부모 body 요소에서 mouseout 이벤트가 발생되어 처리됨");
+		});
+		
+		//주제2. 자식요소 <button class="btn1">Mouse Over/Mouse Out</button> 를 선택해
+		//      mouseover 와 mouseout 이벤트를 하나의 on 메서드로 다중 등록 후 각각 이벤트가 발생하면 이벤트 처리 함수 각각 실행되게 하자
+		
+		$(".btn1").on({
+			
+			"mouseover" : function(){$(".txt1").css("backgroundColor", "yellow")},
+			"mouseout"  : function(){$(".txt1").css("background", "none")}
+		});
+		
+		//주제3. 자식요소 <button class="btn2">Hover</button> 를 선택해
+		//      hover 이벤트 등록 메서드를 사용하여 마우스를 올리거나 내리는 동작을 등록해서 처리
+		$(".btn2").hover(
+						 //mouseover 이벤트가 발생했을때 처리할 이벤트 핸들러 함수 작성
+						 function(){
+							 
+							 //<p class="txt2">내용2</p> 요소 선택 후 배경색을 아쿠아색으로 설정
+							 $(".txt2").css("backgroundColor", "aqua");
+						 },
+						 
+						 //mouseout 이벤트가 잘생했을때 처리할 이벤트 핸들러 함수 작성
+						 function(){
+							 
+							 //<p class="txt2">내용2</p> 요소 선택 후 배경색을 제거
+							 $(".txt2").css("background", "none");
+						 });
+		
+	
+		
+	
+	});
+	</script>
+</head>
+<body>
+	<p><button class="btn1">Mouse Over/Mouse Out</button></p>
+	<p class="txt1">내용1</p>
+	<p><button class="btn2">Hover</button></p>
+	<p class="txt2">내용2</p>
+</body>
+</html>
+
+
+
+
+
+
